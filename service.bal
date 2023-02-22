@@ -31,7 +31,7 @@ service / on new http:Listener(9090) {
 
         //call database and get the details
         mysql:Client dbClient = check new (host = "sahackathon.mysql.database.azure.com", port = 3306, user = "choreo",
-                                          password = "wso2!234", connectionPool={maxOpenConnections: 3});
+                                          password = "wso2!234", database = "chanaka_db", connectionPool={maxOpenConnections: 3});
         sql:ParameterizedQuery query = `SELECT stock_items.itemName, stock_items.itemDesc, stock_items.itemImage, stock_details.includes, stock_details.intendedFor, stock_details.color, stock_details.material 
                                     FROM stock_items
                                     INNER JOIN stock_details ON stock_items.itemID=stock_details.itemID`;
