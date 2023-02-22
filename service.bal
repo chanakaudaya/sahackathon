@@ -7,7 +7,7 @@ type StockItem record {
     string itemName;
     string itemDesc;
     string itemImage;
-    int includes;
+    string includes;
     string intendedFor;
     string color;
     string material;
